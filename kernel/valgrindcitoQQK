@@ -1,0 +1,429 @@
+==39261== Memcheck, a memory error detector
+==39261== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==39261== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==39261== Command: ./kernel
+==39261== Parent PID: 3011
+==39261== 
+==39261== Thread 3:
+==39261== Syscall param socketcall.sendto(msg) points to uninitialised byte(s)
+==39261==    at 0x499CAAE: __libc_send (send.c:28)
+==39261==    by 0x499CAAE: send (send.c:23)
+==39261==    by 0x10FC84: enviar_paquete (shared_utils.c:56)
+==39261==    by 0x10E2FB: enviar_pcb (pcb.c:72)
+==39261==    by 0x10C604: ejecutar_PCB (planificador-corto-plazo.c:30)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261==  Address 0x4ab160a is 218 bytes inside a block of size 1,238 alloc'd
+==39261==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10FBE1: enviar_paquete (shared_utils.c:49)
+==39261==    by 0x10E2FB: enviar_pcb (pcb.c:72)
+==39261==    by 0x10C604: ejecutar_PCB (planificador-corto-plazo.c:30)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261== 
+==39261== Invalid read of size 4
+==39261==    at 0x10E61B: deserializar_buffer_paquete_pcb (pcb.c:164)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261==  Address 0x4abcdb0 is 0 bytes after a block of size 0 alloc'd
+==39261==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10FD62: recibir_paquete (shared_utils.c:80)
+==39261==    by 0x10FDFF: get_paquete (shared_utils.c:97)
+==39261==    by 0x10E5AA: recibir_pcb (pcb.c:146)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261== 
+==39261== Invalid read of size 4
+==39261==    at 0x10E639: deserializar_buffer_paquete_pcb (pcb.c:167)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261==  Address 0x4abcdb4 is 4 bytes after a block of size 0 alloc'd
+==39261==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10FD62: recibir_paquete (shared_utils.c:80)
+==39261==    by 0x10FDFF: get_paquete (shared_utils.c:97)
+==39261==    by 0x10E5AA: recibir_pcb (pcb.c:146)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261== 
+==39261== Invalid read of size 4
+==39261==    at 0x10E657: deserializar_buffer_paquete_pcb (pcb.c:170)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261==  Address 0x4abcdb8 is 8 bytes after a block of size 0 alloc'd
+==39261==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10FD62: recibir_paquete (shared_utils.c:80)
+==39261==    by 0x10FDFF: get_paquete (shared_utils.c:97)
+==39261==    by 0x10E5AA: recibir_pcb (pcb.c:146)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261== 
+==39261== Invalid read of size 4
+==39261==    at 0x10E678: deserializar_buffer_paquete_pcb (pcb.c:173)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261==  Address 0x4abcdbc is 12 bytes after a block of size 0 alloc'd
+==39261==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10FD62: recibir_paquete (shared_utils.c:80)
+==39261==    by 0x10FDFF: get_paquete (shared_utils.c:97)
+==39261==    by 0x10E5AA: recibir_pcb (pcb.c:146)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261== 
+==39261== Invalid read of size 4
+==39261==    at 0x10E699: deserializar_buffer_paquete_pcb (pcb.c:176)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261==  Address 0x4abcdc0 is 16 bytes after a block of size 0 alloc'd
+==39261==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10FD62: recibir_paquete (shared_utils.c:80)
+==39261==    by 0x10FDFF: get_paquete (shared_utils.c:97)
+==39261==    by 0x10E5AA: recibir_pcb (pcb.c:146)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261== 
+==39261== Invalid read of size 2
+==39261==    at 0x4852B94: memmove (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10E7D0: deserializar_buffer_paquete_pcb (pcb.c:201)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261==  Address 0x4abcdee is 2 bytes before a block of size 200 alloc'd
+==39261==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10E5F9: deserializar_buffer_paquete_pcb (pcb.c:159)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261== 
+==39261== Invalid write of size 8
+==39261==    at 0x485293B: memmove (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10E807: deserializar_buffer_paquete_pcb (pcb.c:204)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261==  Address 0x4abcdb0 is 0 bytes after a block of size 0 alloc'd
+==39261==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10FD62: recibir_paquete (shared_utils.c:80)
+==39261==    by 0x10FDFF: get_paquete (shared_utils.c:97)
+==39261==    by 0x10E5AA: recibir_pcb (pcb.c:146)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261== 
+==39261== Invalid write of size 8
+==39261==    at 0x4852943: memmove (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10E807: deserializar_buffer_paquete_pcb (pcb.c:204)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261==  Address 0x4abcdb8 is 8 bytes after a block of size 0 alloc'd
+==39261==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10FD62: recibir_paquete (shared_utils.c:80)
+==39261==    by 0x10FDFF: get_paquete (shared_utils.c:97)
+==39261==    by 0x10E5AA: recibir_pcb (pcb.c:146)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261== 
+==39261== Invalid write of size 8
+==39261==    at 0x485294B: memmove (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10E807: deserializar_buffer_paquete_pcb (pcb.c:204)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261==  Address 0x4abcdc0 is 16 bytes after a block of size 0 alloc'd
+==39261==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10FD62: recibir_paquete (shared_utils.c:80)
+==39261==    by 0x10FDFF: get_paquete (shared_utils.c:97)
+==39261==    by 0x10E5AA: recibir_pcb (pcb.c:146)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261== 
+==39261== Invalid write of size 8
+==39261==    at 0x4852953: memmove (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10E807: deserializar_buffer_paquete_pcb (pcb.c:204)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261==  Address 0x4abcdc8 is 24 bytes after a block of size 0 in arena "client"
+==39261== 
+==39261== Invalid read of size 8
+==39261==    at 0x485294F: memmove (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10E807: deserializar_buffer_paquete_pcb (pcb.c:204)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261==  Address 0x4abceb8 is 0 bytes after a block of size 200 alloc'd
+==39261==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10E5F9: deserializar_buffer_paquete_pcb (pcb.c:159)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261== 
+==39261== Invalid read of size 8
+==39261==    at 0x4852934: memmove (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10E807: deserializar_buffer_paquete_pcb (pcb.c:204)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261==  Address 0x4abcec0 is 8 bytes after a block of size 200 alloc'd
+==39261==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10E5F9: deserializar_buffer_paquete_pcb (pcb.c:159)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261== 
+==39261== Invalid read of size 8
+==39261==    at 0x485293F: memmove (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10E807: deserializar_buffer_paquete_pcb (pcb.c:204)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261==  Address 0x4abcec8 is 16 bytes after a block of size 200 alloc'd
+==39261==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10E5F9: deserializar_buffer_paquete_pcb (pcb.c:159)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+==39261== 
+
+valgrind: m_mallocfree.c:303 (get_bszB_as_is): Assertion 'bszB_lo == bszB_hi' failed.
+valgrind: Heap block lo/hi size mismatch: lo = 64, hi = 0.
+This is probably caused by your program erroneously writing past the
+end of a heap block and corrupting heap metadata.  If you fix any
+invalid writes reported by Memcheck, this assertion failure will
+probably go away.  Please try that before reporting this as a bug.
+
+
+host stacktrace:
+==39261==    at 0x5804284A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==39261==    by 0x58042977: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==39261==    by 0x58042B1B: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==39261==    by 0x5804C8CF: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==39261==    by 0x5803AE9A: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==39261==    by 0x580395B7: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==39261==    by 0x5803DF3D: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==39261==    by 0x58038868: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==39261==    by 0x5800F344: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==39261==    by 0x1002E9E3EB: ???
+==39261==    by 0x100586AF1F: ???
+==39261==    by 0x581FCD83: ??? (in /usr/libexec/valgrind/memcheck-amd64-linux)
+==39261==    by 0x100586AF07: ???
+==39261==    by 0x100586AF1F: ???
+==39261==    by 0x2: ???
+==39261==    by 0x957F: ???
+
+sched status:
+  running_tid=3
+
+Thread 1: status = VgTs_WaitSys syscall 43 (lwpid 39261)
+==39261==    at 0x499C60F: accept (accept.c:26)
+==39261==    by 0x10ECD9: esperar_cliente (shared_incioYcierre.c:118)
+==39261==    by 0x10B1FF: main (kernel.c:63)
+client stack range: [0x1FFEFFE000 0x1FFEFFFFFF] client SP: 0x1FFEFFFDB0
+valgrind stack range: [0x1002CAE000 0x1002DADFFF] top usage: 18744 of 1048576
+
+Thread 2: status = VgTs_WaitSys syscall 202 (lwpid 39294)
+==39261==    at 0x4906197: __futex_abstimed_wait_common64 (futex-internal.c:57)
+==39261==    by 0x4906197: __futex_abstimed_wait_common (futex-internal.c:87)
+==39261==    by 0x4906197: __futex_abstimed_wait_cancelable64 (futex-internal.c:139)
+==39261==    by 0x4911CF7: __new_sem_wait_slow64.constprop.0 (sem_waitcommon.c:183)
+==39261==    by 0x10DBF6: chequear_grado_de_multiprogramacion (planificador-largo-plazo.c:18)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+client stack range: [0x4EA1000 0x569FFFF] client SP: 0x569FDA0
+valgrind stack range: [0x1005473000 0x1005572FFF] top usage: 3656 of 1048576
+
+Thread 3: status = VgTs_Runnable (lwpid 39295)
+==39261==    at 0x4852947: memmove (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==39261==    by 0x10E807: deserializar_buffer_paquete_pcb (pcb.c:204)
+==39261==    by 0x10E5C5: recibir_pcb (pcb.c:148)
+==39261==    by 0x10C72C: recibir_pcb_de_CPU (planificador-corto-plazo.c:65)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10DF97: atender_wait (recursos.c:61)
+==39261==    by 0x10C95B: recibir_pcb_de_CPU (planificador-corto-plazo.c:108)
+==39261==    by 0x10C632: ejecutar_PCB (planificador-corto-plazo.c:32)
+==39261==    by 0x10C6DC: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:51)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+client stack range: [0x56A2000 0x5EA0FFF] client SP: 0x5EA0C78
+valgrind stack range: [0x100576B000 0x100586AFFF] top usage: 4872 of 1048576
+
+Thread 4: status = VgTs_WaitSys syscall 202 (lwpid 39301)
+==39261==    at 0x4906197: __futex_abstimed_wait_common64 (futex-internal.c:57)
+==39261==    by 0x4906197: __futex_abstimed_wait_common (futex-internal.c:87)
+==39261==    by 0x4906197: __futex_abstimed_wait_cancelable64 (futex-internal.c:139)
+==39261==    by 0x4911CF7: __new_sem_wait_slow64.constprop.0 (sem_waitcommon.c:183)
+==39261==    by 0x10AFA2: file_system (file_system.c:19)
+==39261==    by 0x4909B42: start_thread (pthread_create.c:442)
+==39261==    by 0x499ABB3: clone (clone.S:100)
+client stack range: [0x5EA3000 0x66A1FFF] client SP: 0x66A1D90
+valgrind stack range: [0x1005A6F000 0x1005B6EFFF] top usage: 3224 of 1048576
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+

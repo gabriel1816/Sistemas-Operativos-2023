@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "../../shared"
+		},
+		{
+			"path": "../../memoria"
+		},
+		{
+			"path": "../../kernel"
+		},
+		{
+			"path": "../../file_system"
+		},
+		{
+			"path": "../../cpu"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"string.h": "c"
+		}
+	}
+}

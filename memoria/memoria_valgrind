@@ -1,0 +1,250 @@
+==21084== Memcheck, a memory error detector
+==21084== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==21084== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==21084== Command: ./memoria
+==21084== Parent PID: 9935
+==21084== 
+==21084== Thread 4:
+==21084== Conditional jump or move depends on uninitialised value(s)
+==21084==    at 0x10BCFC: crear_segmento (utilsMemoria.c:275)
+==21084==    by 0x10ACD5: atencion_a_kernel (memoria.c:133)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084== 
+==21084== Conditional jump or move depends on uninitialised value(s)
+==21084==    at 0x10BD05: crear_segmento (utilsMemoria.c:275)
+==21084==    by 0x10ACD5: atencion_a_kernel (memoria.c:133)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084== 
+==21084== Invalid read of size 4
+==21084==    at 0x10B9A8: agregarNuevoHueco (utilsMemoria.c:220)
+==21084==    by 0x10BF69: borrar_segmento_en_memoria (utilsMemoria.c:313)
+==21084==    by 0x10C12B: finalizarProceso (utilsMemoria.c:346)
+==21084==    by 0x10AC52: atencion_a_kernel (memoria.c:127)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084==  Address 0x4aae7d0 is 16 bytes inside a block of size 768 free'd
+==21084==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x10C165: finalizarProceso (utilsMemoria.c:350)
+==21084==    by 0x10AC52: atencion_a_kernel (memoria.c:127)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084==  Block was alloc'd at
+==21084==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x10BFD0: crearProcesoEnMemoria (utilsMemoria.c:324)
+==21084==    by 0x10AC1A: atencion_a_kernel (memoria.c:123)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084== 
+==21084== Invalid read of size 4
+==21084==    at 0x10B9DC: agregarNuevoHueco (utilsMemoria.c:225)
+==21084==    by 0x10BF69: borrar_segmento_en_memoria (utilsMemoria.c:313)
+==21084==    by 0x10C12B: finalizarProceso (utilsMemoria.c:346)
+==21084==    by 0x10AC52: atencion_a_kernel (memoria.c:127)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084==  Address 0x4aae7d4 is 20 bytes inside a block of size 768 free'd
+==21084==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x10C165: finalizarProceso (utilsMemoria.c:350)
+==21084==    by 0x10AC52: atencion_a_kernel (memoria.c:127)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084==  Block was alloc'd at
+==21084==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x10BFD0: crearProcesoEnMemoria (utilsMemoria.c:324)
+==21084==    by 0x10AC1A: atencion_a_kernel (memoria.c:123)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084== 
+==21084== Invalid write of size 4
+==21084==    at 0x10B9F5: agregarNuevoHueco (utilsMemoria.c:226)
+==21084==    by 0x10BF69: borrar_segmento_en_memoria (utilsMemoria.c:313)
+==21084==    by 0x10C12B: finalizarProceso (utilsMemoria.c:346)
+==21084==    by 0x10AC52: atencion_a_kernel (memoria.c:127)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084==  Address 0x4aae7d4 is 20 bytes inside a block of size 768 free'd
+==21084==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x10C165: finalizarProceso (utilsMemoria.c:350)
+==21084==    by 0x10AC52: atencion_a_kernel (memoria.c:127)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084==  Block was alloc'd at
+==21084==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x10BFD0: crearProcesoEnMemoria (utilsMemoria.c:324)
+==21084==    by 0x10AC1A: atencion_a_kernel (memoria.c:123)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084== 
+==21084== Invalid read of size 4
+==21084==    at 0x10B9FC: agregarNuevoHueco (utilsMemoria.c:227)
+==21084==    by 0x10BF69: borrar_segmento_en_memoria (utilsMemoria.c:313)
+==21084==    by 0x10C12B: finalizarProceso (utilsMemoria.c:346)
+==21084==    by 0x10AC52: atencion_a_kernel (memoria.c:127)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084==  Address 0x4aae7d0 is 16 bytes inside a block of size 768 free'd
+==21084==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x10C165: finalizarProceso (utilsMemoria.c:350)
+==21084==    by 0x10AC52: atencion_a_kernel (memoria.c:127)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084==  Block was alloc'd at
+==21084==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x10BFD0: crearProcesoEnMemoria (utilsMemoria.c:324)
+==21084==    by 0x10AC1A: atencion_a_kernel (memoria.c:123)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084== 
+==21084== Invalid write of size 4
+==21084==    at 0x10B9C1: agregarNuevoHueco (utilsMemoria.c:221)
+==21084==    by 0x10BF69: borrar_segmento_en_memoria (utilsMemoria.c:313)
+==21084==    by 0x10C12B: finalizarProceso (utilsMemoria.c:346)
+==21084==    by 0x10AC52: atencion_a_kernel (memoria.c:127)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084==  Address 0x4aae7e8 is 40 bytes inside a block of size 768 free'd
+==21084==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x10C165: finalizarProceso (utilsMemoria.c:350)
+==21084==    by 0x10AC52: atencion_a_kernel (memoria.c:127)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084==  Block was alloc'd at
+==21084==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x10BFD0: crearProcesoEnMemoria (utilsMemoria.c:324)
+==21084==    by 0x10AC1A: atencion_a_kernel (memoria.c:123)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084== 
+==21084== Invalid read of size 4
+==21084==    at 0x10B9C8: agregarNuevoHueco (utilsMemoria.c:222)
+==21084==    by 0x10BF69: borrar_segmento_en_memoria (utilsMemoria.c:313)
+==21084==    by 0x10C12B: finalizarProceso (utilsMemoria.c:346)
+==21084==    by 0x10AC52: atencion_a_kernel (memoria.c:127)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084==  Address 0x4aae7ec is 44 bytes inside a block of size 768 free'd
+==21084==    at 0x484B27F: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x10C165: finalizarProceso (utilsMemoria.c:350)
+==21084==    by 0x10AC52: atencion_a_kernel (memoria.c:127)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084==  Block was alloc'd at
+==21084==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x10BFD0: crearProcesoEnMemoria (utilsMemoria.c:324)
+==21084==    by 0x10AC1A: atencion_a_kernel (memoria.c:123)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084== 
+==21084== 
+==21084== Process terminating with default action of signal 2 (SIGINT)
+==21084==    at 0x4907197: __futex_abstimed_wait_common64 (futex-internal.c:57)
+==21084==    by 0x4907197: __futex_abstimed_wait_common (futex-internal.c:87)
+==21084==    by 0x4907197: __futex_abstimed_wait_cancelable64 (futex-internal.c:139)
+==21084==    by 0x490C6A3: __pthread_clockjoin_ex (pthread_join_common.c:105)
+==21084==    by 0x10A758: main (memoria.c:28)
+==21084== 
+==21084== HEAP SUMMARY:
+==21084==     in use at exit: 24,092 bytes in 61 blocks
+==21084==   total heap usage: 730 allocs, 669 frees, 58,294 bytes allocated
+==21084== 
+==21084== Thread 1:
+==21084== 12 bytes in 1 blocks are definitely lost in loss record 3 of 34
+==21084==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x10B08C: inicializar_lista_huecos_libres (utilsMemoria.c:16)
+==21084==    by 0x10B133: inicializarMemoria (utilsMemoria.c:29)
+==21084==    by 0x10A701: main (memoria.c:22)
+==21084== 
+==21084== 12 bytes in 1 blocks are definitely lost in loss record 4 of 34
+==21084==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x10B8DF: crearNuevoHueco (utilsMemoria.c:203)
+==21084==    by 0x10BC08: modificarSegmentoContinuo (utilsMemoria.c:252)
+==21084==    by 0x10BC71: iniciarCompactacion (utilsMemoria.c:265)
+==21084==    by 0x10BD66: crear_segmento (utilsMemoria.c:281)
+==21084==    by 0x10ACD5: atencion_a_kernel (memoria.c:133)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084== 
+==21084== 16 bytes in 1 blocks are definitely lost in loss record 14 of 34
+==21084==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x486D28E: list_create (list.c:34)
+==21084==    by 0x10B28D: enviarMensajeCompactacion (utilsMemoria.c:62)
+==21084==    by 0x10BD15: crear_segmento (utilsMemoria.c:277)
+==21084==    by 0x10ACD5: atencion_a_kernel (memoria.c:133)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084== 
+==21084== 16 bytes in 1 blocks are definitely lost in loss record 15 of 34
+==21084==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x486D28E: list_create (list.c:34)
+==21084==    by 0x10B203: enviarErrorOutOfMemory (utilsMemoria.c:50)
+==21084==    by 0x10BDDB: crear_segmento (utilsMemoria.c:288)
+==21084==    by 0x10ACD5: atencion_a_kernel (memoria.c:133)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084== 
+==21084== 72 bytes in 6 blocks are definitely lost in loss record 23 of 34
+==21084==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x10BDEA: crear_segmento (utilsMemoria.c:291)
+==21084==    by 0x10ACD5: atencion_a_kernel (memoria.c:133)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084== 
+==21084== 272 bytes in 1 blocks are possibly lost in loss record 27 of 34
+==21084==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==21084==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==21084==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==21084==    by 0x490B834: allocate_stack (allocatestack.c:430)
+==21084==    by 0x490B834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==21084==    by 0x10A747: main (memoria.c:26)
+==21084== 
+==21084== 272 bytes in 1 blocks are possibly lost in loss record 28 of 34
+==21084==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==21084==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==21084==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==21084==    by 0x490B834: allocate_stack (allocatestack.c:430)
+==21084==    by 0x490B834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==21084==    by 0x10AEAB: escuchar (memoria.c:168)
+==21084==    by 0x10A79A: f_aux_escucha (memoria.c:36)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084== 
+==21084== 272 bytes in 1 blocks are possibly lost in loss record 29 of 34
+==21084==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==21084==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==21084==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==21084==    by 0x490B834: allocate_stack (allocatestack.c:430)
+==21084==    by 0x490B834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==21084==    by 0x10AEED: escuchar (memoria.c:170)
+==21084==    by 0x10A79A: f_aux_escucha (memoria.c:36)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084== 
+==21084== 272 bytes in 1 blocks are possibly lost in loss record 30 of 34
+==21084==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21084==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==21084==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==21084==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==21084==    by 0x490B834: allocate_stack (allocatestack.c:430)
+==21084==    by 0x490B834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==21084==    by 0x10AE6C: escuchar (memoria.c:165)
+==21084==    by 0x10A79A: f_aux_escucha (memoria.c:36)
+==21084==    by 0x490AB42: start_thread (pthread_create.c:442)
+==21084==    by 0x499BBB3: clone (clone.S:100)
+==21084== 
+==21084== LEAK SUMMARY:
+==21084==    definitely lost: 128 bytes in 10 blocks
+==21084==    indirectly lost: 0 bytes in 0 blocks
+==21084==      possibly lost: 1,088 bytes in 4 blocks
+==21084==    still reachable: 22,876 bytes in 47 blocks
+==21084==         suppressed: 0 bytes in 0 blocks
+==21084== Reachable blocks (those to which a pointer was found) are not shown.
+==21084== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==21084== 
+==21084== Use --track-origins=yes to see where uninitialised values come from
+==21084== For lists of detected and suppressed errors, rerun with: -s
+==21084== ERROR SUMMARY: 34 errors from 17 contexts (suppressed: 0 from 0)

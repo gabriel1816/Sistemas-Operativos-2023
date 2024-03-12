@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "cpu_utils.h": "c",
+        "unistd.h": "c"
+    }
+}

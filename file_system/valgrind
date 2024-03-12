@@ -1,0 +1,195 @@
+==10580== Memcheck, a memory error detector
+==10580== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==10580== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==10580== Command: ./file_system
+==10580== Parent PID: 2779
+==10580== 
+==10580== 
+==10580== Process terminating with default action of signal 2 (SIGINT)
+==10580==    at 0x49EE197: __futex_abstimed_wait_common64 (futex-internal.c:57)
+==10580==    by 0x49EE197: __futex_abstimed_wait_common (futex-internal.c:87)
+==10580==    by 0x49EE197: __futex_abstimed_wait_cancelable64 (futex-internal.c:139)
+==10580==    by 0x49F36A3: __pthread_clockjoin_ex (pthread_join_common.c:105)
+==10580==    by 0x10ABCA: main (file_system.c:44)
+==10580== 
+==10580== HEAP SUMMARY:
+==10580==     in use at exit: 77,196 bytes in 245 blocks
+==10580==   total heap usage: 812 allocs, 567 frees, 250,710 bytes allocated
+==10580== 
+==10580== 4 bytes in 2 blocks are definitely lost in loss record 3 of 81
+==10580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x10CB02: itoa (utilsFileSystem.c:288)
+==10580==    by 0x10CA6A: actualizarFCB (utilsFileSystem.c:280)
+==10580==    by 0x10C39B: truncar_archivo_pedido (utilsFileSystem.c:180)
+==10580==    by 0x10BF63: atender_kernel (utilsFileSystem.c:84)
+==10580==    by 0x49F1B42: start_thread (pthread_create.c:442)
+==10580==    by 0x4A82BB3: clone (clone.S:100)
+==10580== 
+==10580== 4 bytes in 2 blocks are definitely lost in loss record 4 of 81
+==10580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x10CB02: itoa (utilsFileSystem.c:288)
+==10580==    by 0x10CA91: actualizarFCB (utilsFileSystem.c:281)
+==10580==    by 0x10C39B: truncar_archivo_pedido (utilsFileSystem.c:180)
+==10580==    by 0x10BF63: atender_kernel (utilsFileSystem.c:84)
+==10580==    by 0x49F1B42: start_thread (pthread_create.c:442)
+==10580==    by 0x4A82BB3: clone (clone.S:100)
+==10580== 
+==10580== 7 bytes in 2 blocks are definitely lost in loss record 7 of 81
+==10580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x10CB02: itoa (utilsFileSystem.c:288)
+==10580==    by 0x10CA43: actualizarFCB (utilsFileSystem.c:279)
+==10580==    by 0x10C39B: truncar_archivo_pedido (utilsFileSystem.c:180)
+==10580==    by 0x10BF63: atender_kernel (utilsFileSystem.c:84)
+==10580==    by 0x49F1B42: start_thread (pthread_create.c:442)
+==10580==    by 0x4A82BB3: clone (clone.S:100)
+==10580== 
+==10580== 16 bytes in 1 blocks are definitely lost in loss record 17 of 81
+==10580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x486D28E: list_create (list.c:34)
+==10580==    by 0x10BC48: levantar_fcbs (utilsFileSystem.c:32)
+==10580==    by 0x10AB38: main (file_system.c:35)
+==10580== 
+==10580== 16 bytes in 1 blocks are definitely lost in loss record 18 of 81
+==10580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x486D28E: list_create (list.c:34)
+==10580==    by 0x10BC48: levantar_fcbs (utilsFileSystem.c:32)
+==10580==    by 0x10C3B9: truncar_archivo_pedido (utilsFileSystem.c:182)
+==10580==    by 0x10BF63: atender_kernel (utilsFileSystem.c:84)
+==10580==    by 0x49F1B42: start_thread (pthread_create.c:442)
+==10580==    by 0x4A82BB3: clone (clone.S:100)
+==10580== 
+==10580== 17 bytes in 1 blocks are definitely lost in loss record 20 of 81
+==10580==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x486FE7F: string_substring (string.c:185)
+==10580==    by 0x486FEE2: string_substring_from (string.c:191)
+==10580==    by 0x10B882: escribir_archivo (manejo_bloques.c:261)
+==10580==    by 0x10C6F0: escribir_archivo_pedido (utilsFileSystem.c:230)
+==10580==    by 0x10BF8F: atender_kernel (utilsFileSystem.c:88)
+==10580==    by 0x49F1B42: start_thread (pthread_create.c:442)
+==10580==    by 0x4A82BB3: clone (clone.S:100)
+==10580== 
+==10580== 34 bytes in 2 blocks are definitely lost in loss record 36 of 81
+==10580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x10C9BD: actualizarFCB (utilsFileSystem.c:272)
+==10580==    by 0x10C39B: truncar_archivo_pedido (utilsFileSystem.c:180)
+==10580==    by 0x10BF63: atender_kernel (utilsFileSystem.c:84)
+==10580==    by 0x49F1B42: start_thread (pthread_create.c:442)
+==10580==    by 0x4A82BB3: clone (clone.S:100)
+==10580== 
+==10580== 48 bytes in 2 blocks are definitely lost in loss record 42 of 81
+==10580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x10BCD8: levantar_fcbs (utilsFileSystem.c:45)
+==10580==    by 0x10AB38: main (file_system.c:35)
+==10580== 
+==10580== 48 bytes in 2 blocks are definitely lost in loss record 43 of 81
+==10580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x10BCD8: levantar_fcbs (utilsFileSystem.c:45)
+==10580==    by 0x10C3B9: truncar_archivo_pedido (utilsFileSystem.c:182)
+==10580==    by 0x10BF63: atender_kernel (utilsFileSystem.c:84)
+==10580==    by 0x49F1B42: start_thread (pthread_create.c:442)
+==10580==    by 0x4A82BB3: clone (clone.S:100)
+==10580== 
+==10580== 80 bytes in 2 blocks are definitely lost in loss record 52 of 81
+==10580==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x10DC7A: crear_buffer_para_t_instruccion (shared_instruccion.c:25)
+==10580==    by 0x10EDB9: crear_buffer_para_t_pedido_file_system (shared_utils.c:241)
+==10580==    by 0x10EE38: enviar_pedido_file_system (shared_utils.c:254)
+==10580==    by 0x10C5F3: escribir_archivo_pedido (utilsFileSystem.c:225)
+==10580==    by 0x10BF8F: atender_kernel (utilsFileSystem.c:88)
+==10580==    by 0x49F1B42: start_thread (pthread_create.c:442)
+==10580==    by 0x4A82BB3: clone (clone.S:100)
+==10580== 
+==10580== 98 bytes in 2 blocks are definitely lost in loss record 57 of 81
+==10580==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x486FE7F: string_substring (string.c:185)
+==10580==    by 0x486FEE2: string_substring_from (string.c:191)
+==10580==    by 0x10B9B8: escribir_archivo (manejo_bloques.c:273)
+==10580==    by 0x10C6F0: escribir_archivo_pedido (utilsFileSystem.c:230)
+==10580==    by 0x10BF8F: atender_kernel (utilsFileSystem.c:88)
+==10580==    by 0x49F1B42: start_thread (pthread_create.c:442)
+==10580==    by 0x4A82BB3: clone (clone.S:100)
+==10580== 
+==10580== 139 (32 direct, 107 indirect) bytes in 2 blocks are definitely lost in loss record 60 of 81
+==10580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x10E712: crear_paquete (shared_utils.c:29)
+==10580==    by 0x10C040: notificar_truncado (utilsFileSystem.c:108)
+==10580==    by 0x10BF7A: atender_kernel (utilsFileSystem.c:85)
+==10580==    by 0x49F1B42: start_thread (pthread_create.c:442)
+==10580==    by 0x4A82BB3: clone (clone.S:100)
+==10580== 
+==10580== 160 (32 direct, 128 indirect) bytes in 2 blocks are definitely lost in loss record 62 of 81
+==10580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x10E712: crear_paquete (shared_utils.c:29)
+==10580==    by 0x10EE4D: enviar_pedido_file_system (shared_utils.c:255)
+==10580==    by 0x10C5F3: escribir_archivo_pedido (utilsFileSystem.c:225)
+==10580==    by 0x10BF8F: atender_kernel (utilsFileSystem.c:88)
+==10580==    by 0x49F1B42: start_thread (pthread_create.c:442)
+==10580==    by 0x4A82BB3: clone (clone.S:100)
+==10580== 
+==10580== 175 (96 direct, 79 indirect) bytes in 6 blocks are definitely lost in loss record 63 of 81
+==10580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x10DF05: crear_instruccion_para_el_buffer (shared_instruccion.c:77)
+==10580==    by 0x10EEFA: crear_pedido_file_system_para_el_buffer (shared_utils.c:269)
+==10580==    by 0x10BE99: atender_kernel (utilsFileSystem.c:74)
+==10580==    by 0x49F1B42: start_thread (pthread_create.c:442)
+==10580==    by 0x4A82BB3: clone (clone.S:100)
+==10580== 
+==10580== 178 (64 direct, 114 indirect) bytes in 2 blocks are definitely lost in loss record 64 of 81
+==10580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x10DE1E: crear_instruccion_para_el_buffer (shared_instruccion.c:52)
+==10580==    by 0x10C62C: escribir_archivo_pedido (utilsFileSystem.c:228)
+==10580==    by 0x10BF8F: atender_kernel (utilsFileSystem.c:88)
+==10580==    by 0x49F1B42: start_thread (pthread_create.c:442)
+==10580==    by 0x4A82BB3: clone (clone.S:100)
+==10580== 
+==10580== 272 bytes in 1 blocks are possibly lost in loss record 68 of 81
+==10580==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==10580==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==10580==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==10580==    by 0x49F2834: allocate_stack (allocatestack.c:430)
+==10580==    by 0x49F2834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==10580==    by 0x10ABB9: main (file_system.c:43)
+==10580== 
+==10580== 367 (96 direct, 271 indirect) bytes in 6 blocks are definitely lost in loss record 72 of 81
+==10580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x10E891: recibir_paquete (shared_utils.c:70)
+==10580==    by 0x10BE85: atender_kernel (utilsFileSystem.c:73)
+==10580==    by 0x49F1B42: start_thread (pthread_create.c:442)
+==10580==    by 0x4A82BB3: clone (clone.S:100)
+==10580== 
+==10580== 855 (32 direct, 823 indirect) bytes in 2 blocks are definitely lost in loss record 76 of 81
+==10580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x486C09B: config_create (config.c:36)
+==10580==    by 0x10BCC7: levantar_fcbs (utilsFileSystem.c:44)
+==10580==    by 0x10AB38: main (file_system.c:35)
+==10580== 
+==10580== 855 (32 direct, 823 indirect) bytes in 2 blocks are definitely lost in loss record 77 of 81
+==10580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x486C09B: config_create (config.c:36)
+==10580==    by 0x10CA14: actualizarFCB (utilsFileSystem.c:276)
+==10580==    by 0x10C39B: truncar_archivo_pedido (utilsFileSystem.c:180)
+==10580==    by 0x10BF63: atender_kernel (utilsFileSystem.c:84)
+==10580==    by 0x49F1B42: start_thread (pthread_create.c:442)
+==10580==    by 0x4A82BB3: clone (clone.S:100)
+==10580== 
+==10580== 1,690 (64 direct, 1,626 indirect) bytes in 4 blocks are definitely lost in loss record 79 of 81
+==10580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10580==    by 0x486C09B: config_create (config.c:36)
+==10580==    by 0x10BCC7: levantar_fcbs (utilsFileSystem.c:44)
+==10580==    by 0x10C3B9: truncar_archivo_pedido (utilsFileSystem.c:182)
+==10580==    by 0x10BF63: atender_kernel (utilsFileSystem.c:84)
+==10580==    by 0x49F1B42: start_thread (pthread_create.c:442)
+==10580==    by 0x4A82BB3: clone (clone.S:100)
+==10580== 
+==10580== LEAK SUMMARY:
+==10580==    definitely lost: 820 bytes in 45 blocks
+==10580==    indirectly lost: 3,971 bytes in 148 blocks
+==10580==      possibly lost: 272 bytes in 1 blocks
+==10580==    still reachable: 72,133 bytes in 51 blocks
+==10580==         suppressed: 0 bytes in 0 blocks
+==10580== Reachable blocks (those to which a pointer was found) are not shown.
+==10580== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==10580== 
+==10580== For lists of detected and suppressed errors, rerun with: -s
+==10580== ERROR SUMMARY: 20 errors from 20 contexts (suppressed: 0 from 0)

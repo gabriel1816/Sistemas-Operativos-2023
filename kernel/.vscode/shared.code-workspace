@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../../shared"
+		},
+		{
+			"path": "../../memoria"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../file_system"
+		},
+		{
+			"path": "../../cpu"
+		},
+		{
+			"path": "../../consola"
+		}
+	]
+}

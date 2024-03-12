@@ -1,0 +1,98 @@
+==12906== Memcheck, a memory error detector
+==12906== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==12906== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==12906== Command: ./kernel
+==12906== Parent PID: 2059
+==12906== 
+==12906== Thread 3:
+==12906== Syscall param socketcall.sendto(msg) points to uninitialised byte(s)
+==12906==    at 0x499DAAE: __libc_send (send.c:28)
+==12906==    by 0x499DAAE: send (send.c:23)
+==12906==    by 0x10FC19: enviar_paquete (shared_utils.c:589)
+==12906==    by 0x10E03E: enviar_pcb (pcb.c:54)
+==12906==    by 0x10C4E6: ejecutar_PCB (planificador-corto-plazo.c:23)
+==12906==    by 0x10C5BE: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:45)
+==12906==    by 0x490AB42: start_thread (pthread_create.c:442)
+==12906==    by 0x499BBB3: clone (clone.S:100)
+==12906==  Address 0x4ab806a is 218 bytes inside a block of size 532 alloc'd
+==12906==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12906==    by 0x10FB76: enviar_paquete (shared_utils.c:582)
+==12906==    by 0x10E03E: enviar_pcb (pcb.c:54)
+==12906==    by 0x10C4E6: ejecutar_PCB (planificador-corto-plazo.c:23)
+==12906==    by 0x10C5BE: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:45)
+==12906==    by 0x490AB42: start_thread (pthread_create.c:442)
+==12906==    by 0x499BBB3: clone (clone.S:100)
+==12906== 
+==12906== Invalid write of size 8
+==12906==    at 0x10D3F9: consultar_existencia_archivo (planificador-corto-plazo.c:348)
+==12906==    by 0x10C963: recibir_pcb_de_CPU (planificador-corto-plazo.c:143)
+==12906==    by 0x10C514: ejecutar_PCB (planificador-corto-plazo.c:25)
+==12906==    by 0x10C5BE: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:45)
+==12906==    by 0x490AB42: start_thread (pthread_create.c:442)
+==12906==    by 0x499BBB3: clone (clone.S:100)
+==12906==  Address 0x4abc448 is 0 bytes after a block of size 8 alloc'd
+==12906==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12906==    by 0x10D3D7: consultar_existencia_archivo (planificador-corto-plazo.c:345)
+==12906==    by 0x10C963: recibir_pcb_de_CPU (planificador-corto-plazo.c:143)
+==12906==    by 0x10C514: ejecutar_PCB (planificador-corto-plazo.c:25)
+==12906==    by 0x10C5BE: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:45)
+==12906==    by 0x490AB42: start_thread (pthread_create.c:442)
+==12906==    by 0x499BBB3: clone (clone.S:100)
+==12906== 
+==12906== Invalid read of size 8
+==12906==    at 0x110258: crear_buffer_para_t_pedido_file_system (shared_utils.c:746)
+==12906==    by 0x110361: enviar_pedido_file_system (shared_utils.c:768)
+==12906==    by 0x10D419: consultar_existencia_archivo (planificador-corto-plazo.c:350)
+==12906==    by 0x10C963: recibir_pcb_de_CPU (planificador-corto-plazo.c:143)
+==12906==    by 0x10C514: ejecutar_PCB (planificador-corto-plazo.c:25)
+==12906==    by 0x10C5BE: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:45)
+==12906==    by 0x490AB42: start_thread (pthread_create.c:442)
+==12906==    by 0x499BBB3: clone (clone.S:100)
+==12906==  Address 0x4abc448 is 0 bytes after a block of size 8 alloc'd
+==12906==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12906==    by 0x10D3D7: consultar_existencia_archivo (planificador-corto-plazo.c:345)
+==12906==    by 0x10C963: recibir_pcb_de_CPU (planificador-corto-plazo.c:143)
+==12906==    by 0x10C514: ejecutar_PCB (planificador-corto-plazo.c:25)
+==12906==    by 0x10C5BE: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:45)
+==12906==    by 0x490AB42: start_thread (pthread_create.c:442)
+==12906==    by 0x499BBB3: clone (clone.S:100)
+==12906== 
+==12906== Invalid read of size 8
+==12906==    at 0x1102D7: crear_buffer_para_t_pedido_file_system (shared_utils.c:756)
+==12906==    by 0x110361: enviar_pedido_file_system (shared_utils.c:768)
+==12906==    by 0x10D419: consultar_existencia_archivo (planificador-corto-plazo.c:350)
+==12906==    by 0x10C963: recibir_pcb_de_CPU (planificador-corto-plazo.c:143)
+==12906==    by 0x10C514: ejecutar_PCB (planificador-corto-plazo.c:25)
+==12906==    by 0x10C5BE: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:45)
+==12906==    by 0x490AB42: start_thread (pthread_create.c:442)
+==12906==    by 0x499BBB3: clone (clone.S:100)
+==12906==  Address 0x4abc448 is 0 bytes after a block of size 8 alloc'd
+==12906==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12906==    by 0x10D3D7: consultar_existencia_archivo (planificador-corto-plazo.c:345)
+==12906==    by 0x10C963: recibir_pcb_de_CPU (planificador-corto-plazo.c:143)
+==12906==    by 0x10C514: ejecutar_PCB (planificador-corto-plazo.c:25)
+==12906==    by 0x10C5BE: planificar_pcbs_planificador_corto_plazo (planificador-corto-plazo.c:45)
+==12906==    by 0x490AB42: start_thread (pthread_create.c:442)
+==12906==    by 0x499BBB3: clone (clone.S:100)
+==12906== 
+==12906== 
+==12906== Process terminating with default action of signal 2 (SIGINT)
+==12906==    at 0x499D60F: accept (accept.c:26)
+==12906==    by 0x10EA5A: esperar_cliente (shared_utils.c:129)
+==12906==    by 0x10B17D: main (kernel.c:61)
+==12906== 
+==12906== HEAP SUMMARY:
+==12906==     in use at exit: 18,828 bytes in 458 blocks
+==12906==   total heap usage: 2,007 allocs, 1,549 frees, 87,352 bytes allocated
+==12906== 
+==12906== LEAK SUMMARY:
+==12906==    definitely lost: 1,976 bytes in 54 blocks
+==12906==    indirectly lost: 2,828 bytes in 137 blocks
+==12906==      possibly lost: 1,904 bytes in 7 blocks
+==12906==    still reachable: 12,120 bytes in 260 blocks
+==12906==         suppressed: 0 bytes in 0 blocks
+==12906== Rerun with --leak-check=full to see details of leaked memory
+==12906== 
+==12906== Use --track-origins=yes to see where uninitialised values come from
+==12906== For lists of detected and suppressed errors, rerun with: -s
+==12906== ERROR SUMMARY: 7 errors from 4 contexts (suppressed: 0 from 0)

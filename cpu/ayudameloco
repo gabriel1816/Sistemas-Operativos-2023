@@ -1,0 +1,259 @@
+==14701== Memcheck, a memory error detector
+==14701== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==14701== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==14701== Command: ./cpu
+==14701== Parent PID: 2442
+==14701== 
+==14701== Thread 3:
+==14701== Invalid write of size 8
+==14701==    at 0x10C005: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:386)
+==14701==    by 0x10C662: comenzar_ciclo_instruccion (utilsCpu.c:512)
+==14701==    by 0x10A871: atender_clientes (cpu.c:49)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701==  Address 0x4ab8938 is 0 bytes after a block of size 24 alloc'd
+==14701==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14701==    by 0x10DF06: crear_instruccion_para_el_buffer (shared_utils.c:395)
+==14701==    by 0x10E3BA: crear_lista_instrucciones_para_el_buffer (shared_utils.c:505)
+==14701==    by 0x10CFF7: deserializar_buffer_paquete_pcb (pcb.c:178)
+==14701==    by 0x10CD8F: recibir_pcb (pcb.c:120)
+==14701==    by 0x10A84D: atender_clientes (cpu.c:47)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701== 
+==14701== Invalid read of size 8
+==14701==    at 0x10C014: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:387)
+==14701==    by 0x10C662: comenzar_ciclo_instruccion (utilsCpu.c:512)
+==14701==    by 0x10A871: atender_clientes (cpu.c:49)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701==  Address 0x4ab8938 is 0 bytes after a block of size 24 alloc'd
+==14701==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14701==    by 0x10DF06: crear_instruccion_para_el_buffer (shared_utils.c:395)
+==14701==    by 0x10E3BA: crear_lista_instrucciones_para_el_buffer (shared_utils.c:505)
+==14701==    by 0x10CFF7: deserializar_buffer_paquete_pcb (pcb.c:178)
+==14701==    by 0x10CD8F: recibir_pcb (pcb.c:120)
+==14701==    by 0x10A84D: atender_clientes (cpu.c:47)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701== 
+==14701== Invalid read of size 8
+==14701==    at 0x10D9FD: espacio_de_array_parametros (shared_utils.c:281)
+==14701==    by 0x10DA55: crear_buffer_para_t_instruccion (shared_utils.c:290)
+==14701==    by 0x10DD23: crear_buffer__para_t_lista_instrucciones (shared_utils.c:347)
+==14701==    by 0x10CB39: crear_buffer_envio_pcb (pcb.c:63)
+==14701==    by 0x10CABB: enviar_pcb (pcb.c:51)
+==14701==    by 0x10C04B: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:389)
+==14701==    by 0x10C662: comenzar_ciclo_instruccion (utilsCpu.c:512)
+==14701==    by 0x10A871: atender_clientes (cpu.c:49)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701==  Address 0x4ab8938 is 0 bytes after a block of size 24 alloc'd
+==14701==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14701==    by 0x10DF06: crear_instruccion_para_el_buffer (shared_utils.c:395)
+==14701==    by 0x10E3BA: crear_lista_instrucciones_para_el_buffer (shared_utils.c:505)
+==14701==    by 0x10CFF7: deserializar_buffer_paquete_pcb (pcb.c:178)
+==14701==    by 0x10CD8F: recibir_pcb (pcb.c:120)
+==14701==    by 0x10A84D: atender_clientes (cpu.c:47)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701== 
+==14701== Invalid read of size 8
+==14701==    at 0x10DB69: crear_buffer_para_t_instruccion (shared_utils.c:309)
+==14701==    by 0x10DD23: crear_buffer__para_t_lista_instrucciones (shared_utils.c:347)
+==14701==    by 0x10CB39: crear_buffer_envio_pcb (pcb.c:63)
+==14701==    by 0x10CABB: enviar_pcb (pcb.c:51)
+==14701==    by 0x10C04B: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:389)
+==14701==    by 0x10C662: comenzar_ciclo_instruccion (utilsCpu.c:512)
+==14701==    by 0x10A871: atender_clientes (cpu.c:49)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701==  Address 0x4ab8938 is 0 bytes after a block of size 24 alloc'd
+==14701==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14701==    by 0x10DF06: crear_instruccion_para_el_buffer (shared_utils.c:395)
+==14701==    by 0x10E3BA: crear_lista_instrucciones_para_el_buffer (shared_utils.c:505)
+==14701==    by 0x10CFF7: deserializar_buffer_paquete_pcb (pcb.c:178)
+==14701==    by 0x10CD8F: recibir_pcb (pcb.c:120)
+==14701==    by 0x10A84D: atender_clientes (cpu.c:47)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701== 
+==14701== Invalid read of size 8
+==14701==    at 0x10DB8C: crear_buffer_para_t_instruccion (shared_utils.c:309)
+==14701==    by 0x10DD23: crear_buffer__para_t_lista_instrucciones (shared_utils.c:347)
+==14701==    by 0x10CB39: crear_buffer_envio_pcb (pcb.c:63)
+==14701==    by 0x10CABB: enviar_pcb (pcb.c:51)
+==14701==    by 0x10C04B: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:389)
+==14701==    by 0x10C662: comenzar_ciclo_instruccion (utilsCpu.c:512)
+==14701==    by 0x10A871: atender_clientes (cpu.c:49)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701==  Address 0x4ab8938 is 0 bytes after a block of size 24 alloc'd
+==14701==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14701==    by 0x10DF06: crear_instruccion_para_el_buffer (shared_utils.c:395)
+==14701==    by 0x10E3BA: crear_lista_instrucciones_para_el_buffer (shared_utils.c:505)
+==14701==    by 0x10CFF7: deserializar_buffer_paquete_pcb (pcb.c:178)
+==14701==    by 0x10CD8F: recibir_pcb (pcb.c:120)
+==14701==    by 0x10A84D: atender_clientes (cpu.c:47)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701== 
+==14701== Invalid read of size 8
+==14701==    at 0x10DBBB: crear_buffer_para_t_instruccion (shared_utils.c:310)
+==14701==    by 0x10DD23: crear_buffer__para_t_lista_instrucciones (shared_utils.c:347)
+==14701==    by 0x10CB39: crear_buffer_envio_pcb (pcb.c:63)
+==14701==    by 0x10CABB: enviar_pcb (pcb.c:51)
+==14701==    by 0x10C04B: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:389)
+==14701==    by 0x10C662: comenzar_ciclo_instruccion (utilsCpu.c:512)
+==14701==    by 0x10A871: atender_clientes (cpu.c:49)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701==  Address 0x4ab8938 is 0 bytes after a block of size 24 alloc'd
+==14701==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14701==    by 0x10DF06: crear_instruccion_para_el_buffer (shared_utils.c:395)
+==14701==    by 0x10E3BA: crear_lista_instrucciones_para_el_buffer (shared_utils.c:505)
+==14701==    by 0x10CFF7: deserializar_buffer_paquete_pcb (pcb.c:178)
+==14701==    by 0x10CD8F: recibir_pcb (pcb.c:120)
+==14701==    by 0x10A84D: atender_clientes (cpu.c:47)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701== 
+==14701== Invalid read of size 8
+==14701==    at 0x10D9FD: espacio_de_array_parametros (shared_utils.c:281)
+==14701==    by 0x10DA55: crear_buffer_para_t_instruccion (shared_utils.c:290)
+==14701==    by 0x10DD92: crear_buffer__para_t_lista_instrucciones (shared_utils.c:357)
+==14701==    by 0x10CB39: crear_buffer_envio_pcb (pcb.c:63)
+==14701==    by 0x10CABB: enviar_pcb (pcb.c:51)
+==14701==    by 0x10C04B: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:389)
+==14701==    by 0x10C662: comenzar_ciclo_instruccion (utilsCpu.c:512)
+==14701==    by 0x10A871: atender_clientes (cpu.c:49)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701==  Address 0x4ab8938 is 0 bytes after a block of size 24 alloc'd
+==14701==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14701==    by 0x10DF06: crear_instruccion_para_el_buffer (shared_utils.c:395)
+==14701==    by 0x10E3BA: crear_lista_instrucciones_para_el_buffer (shared_utils.c:505)
+==14701==    by 0x10CFF7: deserializar_buffer_paquete_pcb (pcb.c:178)
+==14701==    by 0x10CD8F: recibir_pcb (pcb.c:120)
+==14701==    by 0x10A84D: atender_clientes (cpu.c:47)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701== 
+==14701== Invalid read of size 8
+==14701==    at 0x10DB69: crear_buffer_para_t_instruccion (shared_utils.c:309)
+==14701==    by 0x10DD92: crear_buffer__para_t_lista_instrucciones (shared_utils.c:357)
+==14701==    by 0x10CB39: crear_buffer_envio_pcb (pcb.c:63)
+==14701==    by 0x10CABB: enviar_pcb (pcb.c:51)
+==14701==    by 0x10C04B: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:389)
+==14701==    by 0x10C662: comenzar_ciclo_instruccion (utilsCpu.c:512)
+==14701==    by 0x10A871: atender_clientes (cpu.c:49)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701==  Address 0x4ab8938 is 0 bytes after a block of size 24 alloc'd
+==14701==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14701==    by 0x10DF06: crear_instruccion_para_el_buffer (shared_utils.c:395)
+==14701==    by 0x10E3BA: crear_lista_instrucciones_para_el_buffer (shared_utils.c:505)
+==14701==    by 0x10CFF7: deserializar_buffer_paquete_pcb (pcb.c:178)
+==14701==    by 0x10CD8F: recibir_pcb (pcb.c:120)
+==14701==    by 0x10A84D: atender_clientes (cpu.c:47)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701== 
+==14701== Invalid read of size 8
+==14701==    at 0x10DB8C: crear_buffer_para_t_instruccion (shared_utils.c:309)
+==14701==    by 0x10DD92: crear_buffer__para_t_lista_instrucciones (shared_utils.c:357)
+==14701==    by 0x10CB39: crear_buffer_envio_pcb (pcb.c:63)
+==14701==    by 0x10CABB: enviar_pcb (pcb.c:51)
+==14701==    by 0x10C04B: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:389)
+==14701==    by 0x10C662: comenzar_ciclo_instruccion (utilsCpu.c:512)
+==14701==    by 0x10A871: atender_clientes (cpu.c:49)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701==  Address 0x4ab8938 is 0 bytes after a block of size 24 alloc'd
+==14701==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14701==    by 0x10DF06: crear_instruccion_para_el_buffer (shared_utils.c:395)
+==14701==    by 0x10E3BA: crear_lista_instrucciones_para_el_buffer (shared_utils.c:505)
+==14701==    by 0x10CFF7: deserializar_buffer_paquete_pcb (pcb.c:178)
+==14701==    by 0x10CD8F: recibir_pcb (pcb.c:120)
+==14701==    by 0x10A84D: atender_clientes (cpu.c:47)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701== 
+==14701== Invalid read of size 8
+==14701==    at 0x10DBBB: crear_buffer_para_t_instruccion (shared_utils.c:310)
+==14701==    by 0x10DD92: crear_buffer__para_t_lista_instrucciones (shared_utils.c:357)
+==14701==    by 0x10CB39: crear_buffer_envio_pcb (pcb.c:63)
+==14701==    by 0x10CABB: enviar_pcb (pcb.c:51)
+==14701==    by 0x10C04B: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:389)
+==14701==    by 0x10C662: comenzar_ciclo_instruccion (utilsCpu.c:512)
+==14701==    by 0x10A871: atender_clientes (cpu.c:49)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701==  Address 0x4ab8938 is 0 bytes after a block of size 24 alloc'd
+==14701==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14701==    by 0x10DF06: crear_instruccion_para_el_buffer (shared_utils.c:395)
+==14701==    by 0x10E3BA: crear_lista_instrucciones_para_el_buffer (shared_utils.c:505)
+==14701==    by 0x10CFF7: deserializar_buffer_paquete_pcb (pcb.c:178)
+==14701==    by 0x10CD8F: recibir_pcb (pcb.c:120)
+==14701==    by 0x10A84D: atender_clientes (cpu.c:47)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701== 
+==14701== Invalid read of size 8
+==14701==    at 0x10D700: destruir_instruccion (shared_utils.c:207)
+==14701==    by 0x486C5D5: list_iterate (list.c:88)
+==14701==    by 0x486C8D6: list_clean_and_destroy_elements (list.c:148)
+==14701==    by 0x486C937: list_destroy_and_destroy_elements (list.c:158)
+==14701==    by 0x10CA82: destruir_pcb (pcb.c:39)
+==14701==    by 0x10A8B9: atender_clientes (cpu.c:53)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701==  Address 0x4ab8938 is 0 bytes after a block of size 24 alloc'd
+==14701==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14701==    by 0x10DF06: crear_instruccion_para_el_buffer (shared_utils.c:395)
+==14701==    by 0x10E3BA: crear_lista_instrucciones_para_el_buffer (shared_utils.c:505)
+==14701==    by 0x10CFF7: deserializar_buffer_paquete_pcb (pcb.c:178)
+==14701==    by 0x10CD8F: recibir_pcb (pcb.c:120)
+==14701==    by 0x10A84D: atender_clientes (cpu.c:47)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701== 
+==14701== Invalid read of size 8
+==14701==    at 0x10D71C: destruir_instruccion (shared_utils.c:209)
+==14701==    by 0x486C5D5: list_iterate (list.c:88)
+==14701==    by 0x486C8D6: list_clean_and_destroy_elements (list.c:148)
+==14701==    by 0x486C937: list_destroy_and_destroy_elements (list.c:158)
+==14701==    by 0x10CA82: destruir_pcb (pcb.c:39)
+==14701==    by 0x10A8B9: atender_clientes (cpu.c:53)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701==  Address 0x4ab8938 is 0 bytes after a block of size 24 alloc'd
+==14701==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14701==    by 0x10DF06: crear_instruccion_para_el_buffer (shared_utils.c:395)
+==14701==    by 0x10E3BA: crear_lista_instrucciones_para_el_buffer (shared_utils.c:505)
+==14701==    by 0x10CFF7: deserializar_buffer_paquete_pcb (pcb.c:178)
+==14701==    by 0x10CD8F: recibir_pcb (pcb.c:120)
+==14701==    by 0x10A84D: atender_clientes (cpu.c:47)
+==14701==    by 0x4909B42: start_thread (pthread_create.c:442)
+==14701==    by 0x499ABB3: clone (clone.S:100)
+==14701== 
+==14701== 
+==14701== Process terminating with default action of signal 2 (SIGINT)
+==14701==    at 0x499C60F: accept (accept.c:26)
+==14701==    by 0x10D4A3: esperar_cliente (shared_utils.c:127)
+==14701==    by 0x10A7B0: main (cpu.c:29)
+==14701== 
+==14701== HEAP SUMMARY:
+==14701==     in use at exit: 8,003 bytes in 44 blocks
+==14701==   total heap usage: 1,378 allocs, 1,334 frees, 62,764 bytes allocated
+==14701== 
+==14701== LEAK SUMMARY:
+==14701==    definitely lost: 1,248 bytes in 12 blocks
+==14701==    indirectly lost: 0 bytes in 0 blocks
+==14701==      possibly lost: 544 bytes in 2 blocks
+==14701==    still reachable: 6,211 bytes in 30 blocks
+==14701==         suppressed: 0 bytes in 0 blocks
+==14701== Rerun with --leak-check=full to see details of leaked memory
+==14701== 
+==14701== For lists of detected and suppressed errors, rerun with: -s
+==14701== ERROR SUMMARY: 12 errors from 12 contexts (suppressed: 0 from 0)

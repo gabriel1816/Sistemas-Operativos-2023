@@ -1,0 +1,60 @@
+Como funciona el kernel (Un humilde resumen):
+
+Segun mi entendimiento se deberan tener distintos hilos para la correcta ejecución del sistema:
+
+1. El primer hilo es el de recibir nuevas comunicaciones por parte de la consola -> Se debera guardar en algun lado la relacion entre PCB y conexion con consola -> Podemos usar que el PID sea la conexion con la consola
+Este hilo se debera encargar de crear nuevos procesos (PCB) y encolarlos en NEW
+
+Creacion de nuevos procesos:
+
+Llega la comunicacion por consola de el listado de instrucciones -> Se crea el PCB 
+El PCB creado se encola en NEW -> Semaforo de Nuevo proceso (post)
+Se libera memoria
+
+2. El segundo hilo se debera encargar del largo plazo (Nuevo Proceso)
+Este hilo debera esperar a dos semaforos -> Nuevo Proceso y Grado de Multiprogramación (Este seria un semanforo que comienza en el grado de Multiprogramación)
+Cumpliendo ambas condiciones, se sacará un proceso de la cola de NEW.
+Se envia mensaje a modulo de memoria para inicializar estructuras -> Obtener tabla de segmentos inicial.
+
+(Que sucede para terminar un proceso)
+Cuando se describe un proceso de EXIT, se deberá:
+    a) Dar aviso a memoria para que se liberen estructuras
+    b) Liberar todos los recursos asignados
+    c) Dar aviso a Consola que finalizo el proceso (No especifica razon) 
+
+3. Un Hilo que se encargue del planificador de corto plazo:
+En este hilo crear la conexion al CPU, y se tiene que esperar a que exista un proceso en listo (semaforo)
+La lista de procesos Listos (Dependiendo del algoritmo se van agregando por FIFO list_add o por list_add_sorted (por HRRN sin desalojo) ) se saca el primero.
+Este proceso se pone en estado EJECUCION y se envia el pcb a la CPU para que lo ejecute
+El hilo se queda esperando a que se reciba la respuesta del CPU:
+
+
+SIGNAL -> Manejo del Recurso (Nombre de Recurso)
+WAIT -> Manejo del Recurso (Nombre de Recurso)
+IO -> (Tiempo)
+F_* -> FileSystem
+*_SEGMENT -> Memoria
+YIELD -> Pido desalojo (Paso el proceso a la cola de READY)
+EXIT -> Pido la terminacion del programa (Proceso de Finalizacion)
+
+
+
+4. Manejo de recursos
+
+Manejo de Recursos (Diccionario) -> Un diccionario que tenga como key el nombre del recurso (Lo bueno de esto es que ya cumplimos el requerimiento si no existe el recurso, dictionary_get devuelve NULL)
+El diccionario puede tener un semaforo -> En caso de que si podemos hacer que SIGNAL y WAIT hagan un post y un wait al diccionario del recurso? 
+Con esto creo que automaticamente cuando se cree un hilo se encola -> https://docs.google.com/presentation/d/1L-KjdcdBr_5WG1HktUcqnZZP_S2U3VFu/edit#slide=id.p17 Esto lo estoy sacando de la presentación de Lucho clase Nr5
+Entonces en el caso de un WAIT lo que pienso es crear un nuevo hilo y hacerle un detach de este para que espere al semaforo del recurso, y una vez que este listo lo devuelva a la cola de READY
+El SIGNAL lo que haría es en el semaforo del recurso hacerle un POST.
+El semaforo del diccionario se instanciaría con el numero dado por la configuración. 
+sem_getvalue() -> Funcion de retorno del valor de un semaforo, en caso de tener Instacias en wait retorna nro negativo. SIRVE PARA LOS LOGS
+
+Manejo de recursos.
+    Wait:
+        Si el recurso existe y Si tiene instancias => restarle Uno => Enviar Proceso a ejecución
+        Si el recurso exite y no tiene instancias => Sumarlo a la cola de bloqueados del Recurso y restarle uno a las instacias 
+        Si el recurso no existe => Mandar Proceso a EXIT
+    Signal:
+        Si el recurso no existe => Mandar Proceso a EXIT
+        Si el recurso existe y esta en positivo => Sumarle uno
+        Si el recurso existe y esta en negativo => Sumarle uno y desbloquear el primer proceso

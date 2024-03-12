@@ -1,0 +1,76 @@
+==10603== Memcheck, a memory error detector
+==10603== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==10603== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==10603== Command: ./cpu
+==10603== Parent PID: 2738
+==10603== 
+==10603== 
+==10603== Process terminating with default action of signal 2 (SIGINT)
+==10603==    at 0x499D60F: accept (accept.c:26)
+==10603==    by 0x10D2B5: esperar_cliente (shared_incioYcierre.c:118)
+==10603==    by 0x10A7D0: main (cpu.c:31)
+==10603== 
+==10603== HEAP SUMMARY:
+==10603==     in use at exit: 7,091 bytes in 44 blocks
+==10603==   total heap usage: 5,960 allocs, 5,916 frees, 236,210 bytes allocated
+==10603== 
+==10603== 56 (32 direct, 24 indirect) bytes in 1 blocks are definitely lost in loss record 12 of 22
+==10603==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10603==    by 0x10DCE7: crear_instruccion (shared_instruccion.c:163)
+==10603==    by 0x10B39C: solicitar_MOV_OUT (utilsCpu.c:231)
+==10603==    by 0x10BACB: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:308)
+==10603==    by 0x10C43A: comenzar_ciclo_instruccion (utilsCpu.c:457)
+==10603==    by 0x10C3CB: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:449)
+==10603==    by 0x10C43A: comenzar_ciclo_instruccion (utilsCpu.c:457)
+==10603==    by 0x10A855: atender_clientes (cpu.c:50)
+==10603==    by 0x490AB42: start_thread (pthread_create.c:442)
+==10603==    by 0x499BBB3: clone (clone.S:100)
+==10603== 
+==10603== 56 (32 direct, 24 indirect) bytes in 1 blocks are definitely lost in loss record 13 of 22
+==10603==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10603==    by 0x10DCE7: crear_instruccion (shared_instruccion.c:163)
+==10603==    by 0x10B39C: solicitar_MOV_OUT (utilsCpu.c:231)
+==10603==    by 0x10BACB: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:308)
+==10603==    by 0x10C43A: comenzar_ciclo_instruccion (utilsCpu.c:457)
+==10603==    by 0x10C3CB: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:449)
+==10603==    by 0x10C43A: comenzar_ciclo_instruccion (utilsCpu.c:457)
+==10603==    by 0x10C3CB: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:449)
+==10603==    by 0x10C43A: comenzar_ciclo_instruccion (utilsCpu.c:457)
+==10603==    by 0x10C3CB: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:449)
+==10603==    by 0x10C43A: comenzar_ciclo_instruccion (utilsCpu.c:457)
+==10603==    by 0x10A855: atender_clientes (cpu.c:50)
+==10603== 
+==10603== 224 (128 direct, 96 indirect) bytes in 4 blocks are definitely lost in loss record 18 of 22
+==10603==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10603==    by 0x10DCE7: crear_instruccion (shared_instruccion.c:163)
+==10603==    by 0x10B39C: solicitar_MOV_OUT (utilsCpu.c:231)
+==10603==    by 0x10BACB: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:308)
+==10603==    by 0x10C43A: comenzar_ciclo_instruccion (utilsCpu.c:457)
+==10603==    by 0x10C3CB: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:449)
+==10603==    by 0x10C43A: comenzar_ciclo_instruccion (utilsCpu.c:457)
+==10603==    by 0x10C3CB: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:449)
+==10603==    by 0x10C43A: comenzar_ciclo_instruccion (utilsCpu.c:457)
+==10603==    by 0x10C3CB: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:449)
+==10603==    by 0x10C43A: comenzar_ciclo_instruccion (utilsCpu.c:457)
+==10603==    by 0x10C3CB: leer_instruccion_y_ejecutar_pcb (utilsCpu.c:449)
+==10603== 
+==10603== 544 bytes in 2 blocks are possibly lost in loss record 20 of 22
+==10603==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10603==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==10603==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==10603==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==10603==    by 0x490B834: allocate_stack (allocatestack.c:430)
+==10603==    by 0x490B834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==10603==    by 0x10A7F6: main (cpu.c:32)
+==10603== 
+==10603== LEAK SUMMARY:
+==10603==    definitely lost: 192 bytes in 6 blocks
+==10603==    indirectly lost: 144 bytes in 6 blocks
+==10603==      possibly lost: 544 bytes in 2 blocks
+==10603==    still reachable: 6,211 bytes in 30 blocks
+==10603==         suppressed: 0 bytes in 0 blocks
+==10603== Reachable blocks (those to which a pointer was found) are not shown.
+==10603== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==10603== 
+==10603== For lists of detected and suppressed errors, rerun with: -s
+==10603== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)

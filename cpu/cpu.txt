@@ -1,0 +1,42 @@
+Ejecuta las instrucciones SET, YIELD y EXIT.
+
+
+1. Conectarse con memoria
+2. Recibir PCB desde Kernel
+3. Empezar ciclo de instrucción (Tomando como punto de partida la instruccion del PC)
+4. Traducir direccion logica (del proceso) a física (de la memoria)
+
+5. Devolver PCB a kernel
+
+
+Plantear registros: 
+Los valores a almacenar en los registros siempre tendrán la misma longitud que el registro, es decir que si el registro es de 16 bytes siempre se 
+escribirán 16 caracteres. Por ejemplo:
+    SET RAX ESTO_ES_UN_EJ000
+Lo mismo ocurre para los registros de 4 y 8 bytes:
+    SET EAX TEXTO111
+    SET AX UNO6
+
+
+Plantear ciclo de instrucción
+-Fetch:
+1. Buscar instrucción que apunta el PC
+PC tiene que tener el index de la lista de instrucciones(?
+
+-Decode:
+1. Intepretar instruccion y traducir dirección lógica a dirección física si se requiere
+2. Poner sleep a SET en config
+
+-Execute
+SET (Registro, Valor): Asigna al registro el valor pasado como parámetro.
+YIELD: Esta instrucción desaloja voluntariamente el proceso de la CPU. Se deberá devolver el Contexto de Ejecución actualizado al Kernel. Dejar en READY
+EXIT: Esta instrucción representa la syscall de finalización del proceso. Se deberá devolver el Contexto de Ejecución actualizado al Kernel para su finalización. Dejar en EXIT
+
+Devolvemos PCB y el opcode es la forma en que se devolvio (YIELD, EXIT, ETC...). El kernel es el encargado de hacer el cambio de estado del proceso.
+
+
+
+Que hacer cuando un proceso se pone en exit? Hay process daddys a los que devolverle el resultado?
+
+
+
